@@ -15,6 +15,15 @@ form.addEventListener('submit', e => {
     })
 
     result.classList.remove('d-none');
+    let puan = 0;
+    const bastir = setInterval(() => {
+        result.querySelector('span').textContent = `${puan}%`;
+        if(puan == score){
+            clearInterval(bastir);
+        }else{
+            puan++;
+        }
+    }, 20);
     result.querySelector('span').textContent = `${score}%`;
 
-})
+});
