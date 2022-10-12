@@ -1,5 +1,6 @@
 const correctAnswer = ['Yes','Yes','Yes','Yes','Yes',];
 const form = document.querySelector('.question-form');
+const result = document.querySelector('.result');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -12,5 +13,8 @@ form.addEventListener('submit', e => {
             score += 20;
         }
     })
-    console.log(score);
+
+    result.classList.remove('d-none');
+    result.querySelector('span').textContent = `${score}%`;
+
 })
